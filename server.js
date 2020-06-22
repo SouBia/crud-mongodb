@@ -1,7 +1,7 @@
 const express = require('express')
 require('./config/database')
 
-const port = 3031
+const port =  process.env.PORT || 3031
 const app = express()
 
 const controller = require('./src/controller/produtos')
