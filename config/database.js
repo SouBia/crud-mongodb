@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
-const password = 'Biabia10!'
-const uri = `mongodb+srv://dbBianca:${password}@cluster0-w4tnw.mongodb.net/crud-mongodb?retryWrites=true&w=majority`;
+require('dotenv').config()
+const uri = `mongodb+srv://dbBianca:${process.env.PASSWORD_MONGO}@cluster0-w4tnw.mongodb.net/crud-mongodb?retryWrites=true&w=majority`;
 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
