@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 require('./config/database')
 
 const port =  process.env.PORT || 3031
@@ -7,6 +8,11 @@ const app = express()
 const controller = require('./src/controller/produtos')
 
 app.use(express.json())
+app.use(cors())
+
+app.get('/', (req,res)=>{
+    res.send('Hello World!')
+})
 
 app.get('/produtos', controller.getProdutos)
 app.get('/produtos/:id', controller.getProdutos)
